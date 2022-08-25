@@ -24,6 +24,12 @@ class UserTableSeeder extends Seeder
             'password'  => bcrypt('password'),
         ]);
 
+        $user = User::create([
+            'name'      => 'Pegawai',
+            'email'     => 'pegawai@gmail.com',
+            'password'  => bcrypt('12345'),
+        ]);
+
         //get all permission
         $permission = Permission::all();
 

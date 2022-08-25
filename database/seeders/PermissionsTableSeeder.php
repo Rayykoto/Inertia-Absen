@@ -31,12 +31,6 @@ class PermissionsTableSeeder extends Seeder
         Permission::create(['name' => 'roles.edit', 'guard_name' => 'web']);
         Permission::create(['name' => 'roles.delete', 'guard_name' => 'web']);
 
-        //permission report
-        Permission::create(['name' => 'reports.index', 'guard_name' => 'web']);
-        Permission::create(['name' => 'reports.create', 'guard_name' => 'web']);
-        Permission::create(['name' => 'reports.edit', 'guard_name' => 'web']);
-        Permission::create(['name' => 'reports.delete', 'guard_name' => 'web']);
-
         //permission absensi
         Permission::create(['name' => 'absensis.index', 'guard_name' => 'web']);
         Permission::create(['name' => 'absensis.create', 'guard_name' => 'web']);
@@ -50,9 +44,5 @@ class PermissionsTableSeeder extends Seeder
         Permission::create(['name' => 'cutis.edit', 'guard_name' => 'web']);
         Permission::create(['name' => 'cutis.delete', 'guard_name' => 'web']);
 
-        
-
-        //permission permissions
-        Permission::create(['name' => 'permissions.index', 'guard_name' => 'web']);
     }
 }
