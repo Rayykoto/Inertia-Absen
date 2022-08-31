@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Apps\AbsensiController;
+use App\Http\Controllers\Apps\Pegawai\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,6 +38,10 @@ Route::prefix('apps/pegawai')->group(function() {
     Route::group(['midlleware' => ['auth']], function () {
 
         Route::resource('/cutis', \App\Http\Controllers\Apps\Pegawai\CutiController::class, ['as' => 'apps/pegawai']);
+
+        Route::put('/profiles/updatepassword', [ProfileController::class, 'updatepassword'])->name('apps/pegawai.profiles.updatepassword');
+
+        Route::resource('/profiles', \App\Http\Controllers\Apps\Pegawai\ProfileController::class, ['as' => 'apps/pegawai']);
 
     });
 

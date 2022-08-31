@@ -34,7 +34,29 @@
                                                 {{ errors.email }}
                                             </div>
                                         </div>
-                                    </div>
+                                        <div class="col-md-4">
+                                            <div class="mb-3">
+                                                <label class="fw-bold">Gender</label>
+                                                <select class="form-select" v-model="form.gender">
+                                                    <option value="" disabled selected> Select your Gender </option>
+                                                    <option value="male"> Male </option>
+                                                    <option value="female"> Female </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="mb-3">
+                                                <label class="fw-bold">NIK</label>
+                                                    <input class="form-control" v-model="form.nik" type="number" placeholder="Number Identity">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="mb-3">
+                                                <label class="fw-bold">NIP</label>
+                                                    <input class="form-control" v-model="form.nip" type="number" placeholder="Number Identity Pegawai">
+                                            </div>
+                                        </div>
+                                </div>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="mb-3">
@@ -127,6 +149,9 @@
                 email: '',
                 password: '',
                 password_confirmation: '',
+                gender: '',
+                nik: '',
+                nip: '',
                 roles: []
             });
 
@@ -140,6 +165,9 @@
                     email: form.email,
                     password: form.password,
                     password_confirmation: form.password_confirmation,
+                    gender: form.gender,
+                    nik: form.nik,
+                    nip: form.nip,
                     roles: form.roles
                 }, {
                     onSuccess: () => {

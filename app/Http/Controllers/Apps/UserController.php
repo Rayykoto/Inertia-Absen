@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Apps;
 
 use App\Http\Controllers\Controller;
+use App\Models\Pegawai;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -42,7 +43,8 @@ class UserController extends Controller
         $this->validate($request, [
             'name'     => 'required',
             'email'    => 'required|unique:users',
-            'password' => 'required|confirmed' 
+            'password' => 'required|confirmed',
+            'nip'      => 'required' 
         ]);
 
         /**
@@ -53,6 +55,17 @@ class UserController extends Controller
             'email'    => $request->email,
             'password' => bcrypt($request->password)
         ]);
+
+        if ($user){
+            Pegawai::create([
+                'user_id'   => $user->id,
+                'nip'       => $request->nip,
+                'fullname'  => $user->name,
+                'gender'    => $request->gender,
+                'nik'       => $request->nik
+            ]);
+        }
+        
 
         //assign roles to user
         $user->assignRole($request->roles);

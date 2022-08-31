@@ -17,9 +17,9 @@
 
                                         <Link href="/apps/pegawai/cutis/create" class="btn btn-primary input-group-text"> <i class="fa fa-plus-circle me-2"></i> NEW</Link>
 
-                                        <input type="text" v-model="search" class="form-control" placeholder="search by date...">
+                                        <!-- <input type="text" v-model="search" class="form-control" placeholder="search by date...">
 
-                                        <button class="btn btn-primary input-group-text" type="submit"> <i class="fa fa-search me-2"></i> SEARCH</button>
+                                        <button class="btn btn-primary input-group-text" type="submit"> <i class="fa fa-search me-2"></i> SEARCH</button> -->
                                     </div>
                                 </form>
                                 <table class="table table-striped table-bordered table-hover">
